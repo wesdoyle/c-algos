@@ -123,32 +123,32 @@ c_algorithms/fast:
 	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/build
 .PHONY : c_algorithms/fast
 
-library.o: library.c.o
+linked-list-city-population.o: linked-list-city-population.c.o
 
-.PHONY : library.o
+.PHONY : linked-list-city-population.o
 
 # target to build an object file
-library.c.o:
-	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/library.c.o
-.PHONY : library.c.o
+linked-list-city-population.c.o:
+	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o
+.PHONY : linked-list-city-population.c.o
 
-library.i: library.c.i
+linked-list-city-population.i: linked-list-city-population.c.i
 
-.PHONY : library.i
+.PHONY : linked-list-city-population.i
 
 # target to preprocess a source file
-library.c.i:
-	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/library.c.i
-.PHONY : library.c.i
+linked-list-city-population.c.i:
+	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/linked-list-city-population.c.i
+.PHONY : linked-list-city-population.c.i
 
-library.s: library.c.s
+linked-list-city-population.s: linked-list-city-population.c.s
 
-.PHONY : library.s
+.PHONY : linked-list-city-population.s
 
 # target to generate assembly for a file
-library.c.s:
-	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/library.c.s
-.PHONY : library.c.s
+linked-list-city-population.c.s:
+	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/linked-list-city-population.c.s
+.PHONY : linked-list-city-population.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... c_algorithms"
-	@echo "... library.o"
-	@echo "... library.i"
-	@echo "... library.s"
+	@echo "... linked-list-city-population.o"
+	@echo "... linked-list-city-population.i"
+	@echo "... linked-list-city-population.s"
 .PHONY : help
 
 

@@ -80,10 +80,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/wes/projects/c-algorithms/library.c">
+		<Unit filename="/Users/wes/projects/c-algorithms/linked-list-city-population.c">
 			<Option target="c_algorithms"/>
 		</Unit>
-		<Unit filename="/Users/wes/projects/c-algorithms/library.h">
+		<Unit filename="/Users/wes/projects/c-algorithms/linked-list-city-population.h">
 			<Option target="c_algorithms"/>
 		</Unit>
 		<Unit filename="/Users/wes/projects/c-algorithms/CMakeLists.txt">

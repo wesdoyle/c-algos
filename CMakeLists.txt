@@ -3,4 +3,4 @@ project(c_algorithms C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(c_algorithms citypopulation.c citypopulation.h)
+add_library(c_algorithms linked-list-city-population.c linked-list-city-population.h)

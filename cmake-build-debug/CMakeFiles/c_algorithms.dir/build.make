@@ -57,38 +57,38 @@ include CMakeFiles/c_algorithms.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/c_algorithms.dir/flags.make
 
-CMakeFiles/c_algorithms.dir/library.c.o: CMakeFiles/c_algorithms.dir/flags.make
-CMakeFiles/c_algorithms.dir/library.c.o: ../library.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wes/projects/c-algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c_algorithms.dir/library.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/c_algorithms.dir/library.c.o   -c /Users/wes/projects/c-algorithms/library.c
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o: CMakeFiles/c_algorithms.dir/flags.make
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o: ../linked-list-city-population.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wes/projects/c-algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o   -c /Users/wes/projects/c-algorithms/linked-list-city-population.c
 
-CMakeFiles/c_algorithms.dir/library.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_algorithms.dir/library.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wes/projects/c-algorithms/library.c > CMakeFiles/c_algorithms.dir/library.c.i
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_algorithms.dir/linked-list-city-population.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/wes/projects/c-algorithms/linked-list-city-population.c > CMakeFiles/c_algorithms.dir/linked-list-city-population.c.i
 
-CMakeFiles/c_algorithms.dir/library.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_algorithms.dir/library.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wes/projects/c-algorithms/library.c -o CMakeFiles/c_algorithms.dir/library.c.s
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_algorithms.dir/linked-list-city-population.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/wes/projects/c-algorithms/linked-list-city-population.c -o CMakeFiles/c_algorithms.dir/linked-list-city-population.c.s
 
-CMakeFiles/c_algorithms.dir/library.c.o.requires:
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.requires:
 
-.PHONY : CMakeFiles/c_algorithms.dir/library.c.o.requires
+.PHONY : CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.requires
 
-CMakeFiles/c_algorithms.dir/library.c.o.provides: CMakeFiles/c_algorithms.dir/library.c.o.requires
-	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/library.c.o.provides.build
-.PHONY : CMakeFiles/c_algorithms.dir/library.c.o.provides
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.provides: CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.requires
+	$(MAKE) -f CMakeFiles/c_algorithms.dir/build.make CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.provides.build
+.PHONY : CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.provides
 
-CMakeFiles/c_algorithms.dir/library.c.o.provides.build: CMakeFiles/c_algorithms.dir/library.c.o
+CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.provides.build: CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o
 
 
 # Object files for target c_algorithms
 c_algorithms_OBJECTS = \
-"CMakeFiles/c_algorithms.dir/library.c.o"
+"CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o"
 
 # External object files for target c_algorithms
 c_algorithms_EXTERNAL_OBJECTS =
 
-libc_algorithms.a: CMakeFiles/c_algorithms.dir/library.c.o
+libc_algorithms.a: CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o
 libc_algorithms.a: CMakeFiles/c_algorithms.dir/build.make
 libc_algorithms.a: CMakeFiles/c_algorithms.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wes/projects/c-algorithms/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libc_algorithms.a"
@@ -100,7 +100,7 @@ CMakeFiles/c_algorithms.dir/build: libc_algorithms.a
 
 .PHONY : CMakeFiles/c_algorithms.dir/build
 
-CMakeFiles/c_algorithms.dir/requires: CMakeFiles/c_algorithms.dir/library.c.o.requires
+CMakeFiles/c_algorithms.dir/requires: CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o.requires
 
 .PHONY : CMakeFiles/c_algorithms.dir/requires
 

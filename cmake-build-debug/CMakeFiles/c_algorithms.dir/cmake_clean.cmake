@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/c_algorithms.dir/library.c.o"
+  "CMakeFiles/c_algorithms.dir/linked-list-city-population.c.o"
   "libc_algorithms.pdb"
   "libc_algorithms.a"
 )
