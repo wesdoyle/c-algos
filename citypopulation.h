@@ -1,0 +1,4 @@
+#ifndef C_ALGORITHMS_LIBRARY_H
+#define C_ALGORITHMS_LIBRARY_H
+
+#endif
