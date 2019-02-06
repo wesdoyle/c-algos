@@ -26,9 +26,9 @@ int node_count;
 
 int add_node (link);
 void create_list (void);
-int delete_node (void);
-int duplicate_node (link, link);
-void free_node (void);
+int delete_node (link);
+int duplicate_node(link);
+void free_node (link);
 void show_nodes (void);
 int compare_nodes (link, link);
 
@@ -62,7 +62,7 @@ int add_node(link to_add)
     }
 
     if (curr && i == 0) // duplicate
-        if (duplicate_node(curr, copy) == 0)
+        if (duplicate_node(copy) == 0)
             return (1);
 
     prev -> next = copy;
@@ -70,4 +70,46 @@ int add_node(link to_add)
     head = dummy.next;
 
     return (1);
+}
+
+int duplicate_node(link dupe)
+{
+    free_node(dupe);
+    return (0);
+}
+
+void free_node(link n)
+{
+    free(n->city);
+    free(n);
+}
+
+int delete_node(link to_delete)
+{
+    link curr, prev;
+    int i;
+
+    // is there anything in the list?
+    if (head==NULL)
+        return (0);
+
+    // step through the list looking for the node
+    for (prev=NULL, curr=head;
+            curr != NULL && (i = compare_nodes(to_delete, curr)) < 0;
+            prev=curr, curr=curr->next); // loop around
+
+    // a match is found; delete it.
+    if (curr != NULL && i == 0)
+    {
+        if (prev)
+            prev->next = curr->next;
+        else
+            head = curr->next;
+
+        free_node(curr);
+        node_count -= 1;
+        return (1);
+    }
+
+    return (0);
 }
