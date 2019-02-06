@@ -5,12 +5,12 @@
 
 /*--- linked-list-city-population.c ---
  * Reads a text file of city names and populations in the format:
- * Population_City
- * Where:
- * Population is a number of 7 digits,
- * City is a string of length < 64
- * Example: 8623000NewYork
+ * PopulationCity (For example: 8623000NewYork)
+ *  - Population is a number of 7 digits,
+ *  - City is a string of length < 64
  * Records are read into a singly linked list ordered by population
+ * Median is identified
+ * Results are printed to stdout
  * --- */
 
 
@@ -87,7 +87,6 @@ void free_node(link n)
 int compare_nodes(link a, link b)
 {
     // returns -1, 0, or 1 => if data in a is less than, equal to, greater than b
-
     if (a->population != b->population)
         return(a->population - b->population);
 
@@ -184,6 +183,9 @@ int main(int argc, char *argv[])
     // main loop
     while(!feof(fin))
     {
+        printf("opening file!");
+        break;
+
         if(fgets(buffer, 127, fin) == NULL)
             break;
 
