@@ -117,7 +117,7 @@ void show_nodes(void)
         count = 0;
         for(pn=head; pn; pn=pn->next)
         {
-            printf("%-20s: %3d", pn->city, pn->population);
+            printf("%-20s: %7d", pn->city, pn->population);
             count += 1;
             if (count == median)
                 printf(" <-- Median ");
@@ -190,7 +190,7 @@ int main(int argc, char *argv[])
         // get rid of the trailing return
         buffer [strlen(buffer) - 1] = '\0';
 
-        n.city = strdup(buffer+3);
+        n.city = strdup(buffer + 7);
 
         buffer[7] = '\0';
 
