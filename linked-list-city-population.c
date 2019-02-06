@@ -84,7 +84,7 @@ void free_node(link n)
     free(n);
 }
 
-int compare_node(link a, link b)
+int compare_nodes(link a, link b)
 {
     // returns -1, 0, or 1 => if data in a is less than, equal to, greater than b
 
