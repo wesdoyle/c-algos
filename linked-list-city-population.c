@@ -160,7 +160,7 @@ int delete_node(link to_delete)
 int main(int argc, char *argv[])
 {
     FILE *fin;          // file read from
-    char buffer[128];  // where file is read into
+    char buffer[64];   // where file is read into
     struct node n;     // the node we add each time
 
     if (argc != 2)
