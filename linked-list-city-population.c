@@ -32,6 +32,48 @@ void free_node (link);
 void show_nodes (void);
 int compare_nodes (link, link);
 
+int main(int argc, char *argv[]) {
+    FILE *fin;          // file read from
+    char buffer[64];   // where file is read into
+    struct node n;     // the node we add each time
+
+    if (argc != 2) {
+        fprintf(stderr, "Usage: linked-list-city-population.ext\n");
+        exit(EXIT_FAILURE);
+    }
+
+    fin = fopen(argv[1], "rt");
+
+    if (fin == NULL) {
+        fprintf(stderr, "Cannot open file %s\n", argv[2]);
+        exit(EXIT_FAILURE);
+    }
+
+    // create and initialize empty linked list
+    create_list();
+
+    // main loop
+    while(!feof(fin)) {
+        if(fgets(buffer, 127, fin) == NULL) {
+            break;
+        }
+
+        // get rid of the trailing return
+        buffer [strlen(buffer) - 1] = '\0';
+        n.city = strdup(buffer + 7);
+        buffer[7] = '\0';
+        n.population = atoi(buffer);
+
+        if (add_node(&n) == 0) {
+            fprintf(stderr, "Error adding node! Exiting program.");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    show_nodes();
+    return(EXIT_SUCCESS);
+}
+
 int add_node(link to_add) {
     link copy, prev, curr;
     struct node dummy;
@@ -132,86 +174,27 @@ int delete_node(link to_delete) {
     int i;
 
     // is there anything in the list?
-    if (head==NULL) {
+    if (head == NULL) {
         return (0);
     }
 
     // step through the list looking for the node
-    for (prev=NULL, curr=head;
+    for (prev = NULL, curr = head;
             curr != NULL && (i = compare_nodes(to_delete, curr)) < 0;
-            prev=curr, curr=curr->next); // loop around
+            prev = curr, curr = curr->next); // loop around
 
     // a match is found; delete it.
     if (curr != NULL && i == 0) {
-        if (prev)
+        if (prev) {
             prev->next = curr->next;
-        else
+        }
+        else {
             head = curr->next;
+        }
 
         free_node(curr);
         node_count -= 1;
         return (1);
     }
-
     return (0);
-}
-
-int main(int argc, char *argv[]) {
-    FILE *fin;          // file read from
-    char buffer[64];   // where file is read into
-    struct node n;     // the node we add each time
-
-    if (argc != 2) {
-        fprintf(stderr, "Usage: linked-list-city-population.ext\n");
-        exit(EXIT_FAILURE);
-    }
-
-    fin = fopen(argv[1], "rt");
-
-    if (fin == NULL) {
-        fprintf(stderr, "Cannot open file %s\n", argv[2]);
-        exit(EXIT_FAILURE);
-    }
-
-    // create and initialize empty linked list
-    create_list();
-
-    // main loop
-    while(!feof(fin)) {
-        printf("opening file!");
-
-        if(fgets(buffer, 127, fin) == NULL) {
-            break;
-        }
-
-        // get rid of the trailing return
-        buffer [strlen(buffer) - 1] = '\0';
-        n.city = strdup(buffer + 7);
-        buffer[7] = '\0';
-        n.population = atoi(buffer);
-
-        if (add_node(&n) == 0) {
-            fprintf(stderr, "Error adding node! Exiting program.");
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    show_nodes();
-
-    printf("\n");
-    delete_node(head);
-    show_nodes();
-
-    while (head && head->next) {
-        printf("\n");
-        delete_node(head->next);
-        show_nodes();
-    }
-
-    printf("\n");
-    delete_node(head);
-    show_nodes();
-
-    fclose(fin);
-    return(EXIT_SUCCESS);
 }

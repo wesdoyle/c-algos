@@ -60,6 +60,43 @@ CMAKE_SOURCE_DIR = /Users/wes/projects/c-algorithms
 CMAKE_BINARY_DIR = /Users/wes/projects/c-algorithms/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/city_pop.dir
+
+# All Build rule for target.
+CMakeFiles/city_pop.dir/all:
+	$(MAKE) -f CMakeFiles/city_pop.dir/build.make CMakeFiles/city_pop.dir/depend
+	$(MAKE) -f CMakeFiles/city_pop.dir/build.make CMakeFiles/city_pop.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wes/projects/c-algorithms/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target city_pop"
+.PHONY : CMakeFiles/city_pop.dir/all
+
+# Include target in all.
+all: CMakeFiles/city_pop.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/city_pop.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wes/projects/c-algorithms/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/city_pop.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wes/projects/c-algorithms/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/city_pop.dir/rule
+
+# Convenience name for target.
+city_pop: CMakeFiles/city_pop.dir/rule
+
+.PHONY : city_pop
+
+# clean rule for target.
+CMakeFiles/city_pop.dir/clean:
+	$(MAKE) -f CMakeFiles/city_pop.dir/build.make CMakeFiles/city_pop.dir/clean
+.PHONY : CMakeFiles/city_pop.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/city_pop.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/c_algorithms.dir
 
 # All Build rule for target.
