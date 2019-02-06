@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 
     // main loop
     while(!feof(fin)) {
-        if(fgets(buffer, 127, fin) == NULL) {
+        if(fgets(buffer, 63, fin) == NULL) {
             break;
         }
 
