@@ -9,7 +9,7 @@
  * Where:
  * Population is a number of 7 digits,
  * City is a string of length < 64
- * Example: 8623000_NewYork
+ * Example: 8623000NewYork
  * Records are read into a singly linked list ordered by population
  * --- */
 
@@ -84,6 +84,50 @@ void free_node(link n)
     free(n);
 }
 
+int compare_node(link a, link b)
+{
+    // returns -1, 0, or 1 => if data in a is less than, equal to, greater than b
+
+    if (a->population != b->population)
+        return(a->population - b->population);
+
+    return strcmp(a->city, b->city);
+}
+
+void create_list(void)
+{
+    head=NULL;
+    node_count=0;
+}
+
+void show_nodes(void)
+{
+    link pn;
+    int count, median;
+
+    // count the nodes
+    for (count = 0, pn=head; pn; pn = pn->next)
+        count += 1;
+
+    median = count / 2 + 1;
+
+    // step through the list, printing cities and populations.
+    if (count)
+    {
+        count = 0;
+        for(pn=head; pn; pn=pn->next)
+        {
+            printf("%-20s: %3d", pn->city, pn->population);
+            count += 1;
+            if (count == median)
+                printf(" <-- Median ");
+            printf("\n");
+        }
+    }
+    else
+        printf("Empty list\n");
+}
+
 int delete_node(link to_delete)
 {
     link curr, prev;
@@ -112,4 +156,70 @@ int delete_node(link to_delete)
     }
 
     return (0);
+}
+
+int main(int argc, char *argv[])
+{
+    FILE *fin;          // file read from
+    char buffer[128];  // where file is read into
+    struct node n;     // the node we add each time
+
+    if (argc != 2)
+    {
+        fprintf(stderr, "Usage: linked-list-city-population.ext\n");
+        exit(EXIT_FAILURE);
+    }
+
+    fin = fopen(argv[1], "rt");
+
+    if (fin == NULL)
+    {
+        fprintf(stderr, "Cannot open file %s\n", argv[2]);
+        exit(EXIT_FAILURE);
+    }
+
+    // create and initialize empty linked list
+    create_list();
+
+    // main loop
+    while(!feof(fin))
+    {
+        if(fgets(buffer, 127, fin) == NULL)
+            break;
+
+        // get rid of the trailing return
+        buffer [strlen(buffer) - 1] = '\0';
+
+        n.city = strdup(buffer+3);
+
+        buffer[7] = '\0';
+
+        n.population = atoi(buffer);
+
+        if (add_node(&n) == 0)
+        {
+            fprintf(stderr, "Error adding node! Exiting program.");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    show_nodes();
+
+    printf("\n");
+    delete_node(head);
+    show_nodes();
+
+    while (head && head->next)
+    {
+        printf("\n");
+        delete_node(head->next);
+        show_nodes();
+    }
+
+    printf("\n");
+    delete_node(head);
+    show_nodes();
+
+    fclose(fin);
+    return(EXIT_SUCCESS);
 }
