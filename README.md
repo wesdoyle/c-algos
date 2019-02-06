@@ -2,6 +2,10 @@
 
 Implementations of useful algorithms in C 
 
+## Example Usages
+
+TBD
+
 ## Algorithms
 
 ### Linked Lists
