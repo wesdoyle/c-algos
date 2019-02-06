@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     struct node n;     // the node we add each time
 
     if (argc != 2) {
-        fprintf(stderr, "Usage: linked-list-city-population.ext\n");
+        fprintf(stderr, "Usage: city_pop my_file\n");
         exit(EXIT_FAILURE);
     }
 
